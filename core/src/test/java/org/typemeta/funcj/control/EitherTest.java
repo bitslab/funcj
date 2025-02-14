@@ -56,6 +56,7 @@ public class EitherTest {
         assertEquals(Either.right(String.valueOf(c)), Either.right(c).app(Either.right(Object::toString)));
         assertEquals(Either.left("fail"), Either.right(c).app(Either.left("fail")));
         assertEquals(Either.left(c), Either.left(c).app(Either.right(Object::toString)));
+        assertEquals(Either.left(c), Either.left(c).app(Either.left(c)));
     }
 
     @Property
